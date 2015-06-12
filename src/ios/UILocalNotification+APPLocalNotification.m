@@ -168,6 +168,9 @@ NSInteger const APPLocalNotificationTypeTriggered = 2;
 
     [obj removeObjectForKey:@"updatedAt"];
 
+    if (!obj)
+        return @"{}";
+
     data = [NSJSONSerialization dataWithJSONObject:obj
                                            options:NSJSONWritingPrettyPrinted
                                              error:Nil];
